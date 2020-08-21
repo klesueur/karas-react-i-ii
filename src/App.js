@@ -14,10 +14,14 @@ class App extends React.Component {
 
   render(){
     let personIndex = 0
+    
     return(
     
-      <div>
+      <div >
+
         <h3 className='header'> Home </h3>
+        
+        <div className='content-box'>
        <h2> {this.state.data[personIndex].name.first} {this.state.data[personIndex].name.last} </h2>
         <h4> From: 
           <text> {this.state.data[personIndex].city}, {this.state.data[personIndex].country}</text>
@@ -31,12 +35,12 @@ class App extends React.Component {
         <h4> Favorite Movies:  </h4>
        
         <ol>
-          <li>{this.state.data[personIndex].favoriteMovies.[0]}</li>
-          <li>{this.state.data[personIndex].favoriteMovies.[1]}</li>
-          <li>{this.state.data[personIndex].favoriteMovies.[2]}</li>
+          <li>{this.state.data[personIndex].favoriteMovies[0]}</li>
+          <li>{this.state.data[personIndex].favoriteMovies[1]}</li>
+          <li>{this.state.data[personIndex].favoriteMovies[2]}</li>
         </ol>
-        <button> Previous </button>
-        <button> Next </button>
+        
+        </div>
       </div>
     )
   }

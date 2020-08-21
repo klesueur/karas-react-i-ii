@@ -5,8 +5,44 @@
 }
 
 .header {
+  display: flex;
   height: 10vh;
   width: 100vw;
   background-color: #33a5da;
   padding: 25px;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    padding: 15px;
+}
+
+.buttons {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: baseline;
+  align-content: flex-start;
+  padding: 15px;
+}
+
+.previousLink {
+  font-size: 16px;
+  padding: 10px 24px;
+  background-color: #222222;
+  color: #fbfbfb;
+  padding: 15px;
+}
+
+.nextLink {
+  font-size: 16px;
+  padding: 10px 24px;
+  background-color: #222222;
+  color: #fbfbfb;
+  padding: 15px;
 }

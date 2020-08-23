@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import data from './Data'
-
+import Buttons from './Components/Buttons'
 class App extends React.Component {
   constructor(){
     super()
@@ -9,6 +9,10 @@ class App extends React.Component {
     this.state = {
       data: data
     }
+  }
+
+  previousIndex() {
+
   }
 
 
@@ -39,7 +43,10 @@ class App extends React.Component {
           <li>{this.state.data[personIndex].favoriteMovies[1]}</li>
           <li>{this.state.data[personIndex].favoriteMovies[2]}</li>
         </ol>
-        
+        <div className='buttons'>
+                <button className='previousLink' onChange={ () => {this.previousIndex(this.state.data[personIndex] + 1)}}> Previous </button>
+                <button className='nextLink' onChange={ () => {this.previousIndex(this.state.data[personIndex] - 1)}}> Next </button>
+            </div>
         </div>
       </div>
     )

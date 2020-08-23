@@ -1,24 +1,26 @@
-import React from 'react'
-import React from './App.css' 
+// import React from 'react'
+// import App from './App.css' 
 
-class State extends Component {
-    super()
+// class Buttons extends Component {
+//     constructor() {
+//         super()
 
-    this.state = {
+//         this.state = {
 
-    }
-
-
-    render(){
-        return(
-            <div className='buttons'>
-                <button className='previousLink'> Previous </button>
-                <button className='nextLink'> Next </button>
-            </div>
-        )
-    }
+//         }
+//     }
 
 
-}
+//     render(){
+//         return(
+//             <div className='buttons'>
+//                 <button className='previousLink'> Previous </button>
+//                 <button className='nextLink'> Next </button>
+//             </div>
+//         )
+//     }
 
-export default Buttons  
+
+// }
+
+// export default Buttons  

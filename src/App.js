@@ -7,17 +7,31 @@ class App extends React.Component {
     super()
 
     this.state = {
-      data: data
+      data: data,
+      personIndex: 0
     }
   }
 
   previousIndex() {
-
+    const newIndex = this.state.personIndex - 1
+    if ( newIndex >= 0) {
+    this.setState({
+      personIndex: newIndex
+    }) } 
+  }
+  
+  nextIndex() {
+    const newIndex = this.state.personIndex + 1
+    if ( newIndex <= this.state.data.length - 1) {
+      this.setState({
+        personIndex: newIndex 
+      })
+    }
   }
 
 
   render(){
-    let personIndex = 0
+  const {data, personIndex} = this.state
     
     return(
     
@@ -26,26 +40,26 @@ class App extends React.Component {
         <h3 className='header'> Home </h3>
         
         <div className='content-box'>
-       <h2> {this.state.data[personIndex].name.first} {this.state.data[personIndex].name.last} </h2>
+       <h2> {data[personIndex].name.first} {data[personIndex].name.last} </h2>
         <h4> From: 
-          <text> {this.state.data[personIndex].city}, {this.state.data[personIndex].country}</text>
+          <text> {data[personIndex].city}, {data[personIndex].country}</text>
         </h4>
         <h4> Job Title: 
-          <text> {this.state.data[personIndex].title} </text>
+          <text> {data[personIndex].title} </text>
         </h4>
         <h4> Employer: 
-          <text> {this.state.data[personIndex].employer} </text>
+          <text> {data[personIndex].employer} </text>
         </h4>
         <h4> Favorite Movies:  </h4>
        
         <ol>
-          <li>{this.state.data[personIndex].favoriteMovies[0]}</li>
-          <li>{this.state.data[personIndex].favoriteMovies[1]}</li>
-          <li>{this.state.data[personIndex].favoriteMovies[2]}</li>
+          <li>{data[personIndex].favoriteMovies[0]}</li>
+          <li>{data[personIndex].favoriteMovies[1]}</li>
+          <li>{data[personIndex].favoriteMovies[2]}</li>
         </ol>
         <div className='buttons'>
-                <button className='previousLink' onChange={ () => {this.previousIndex(this.state.data[personIndex] + 1)}}> Previous </button>
-                <button className='nextLink' onChange={ () => {this.previousIndex(this.state.data[personIndex] - 1)}}> Next </button>
+                <button className='previousLink' onClick={ () => this.previousIndex()}> Previous </button>
+                <button className='nextLink' onClick={ () => this.nextIndex()}> Next </button>
             </div>
         </div>
       </div>
